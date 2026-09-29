@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "The main window's only permissions. Add read-only query and settings commands here one by one; never capture APIs and never core:default.",
+  "windows": ["main"],
+  "permissions": []
+}

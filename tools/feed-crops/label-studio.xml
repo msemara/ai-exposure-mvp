@@ -1,0 +1,64 @@
+<!-- Label Studio labeling config for feed crops. See LABELING.md. -->
+<View>
+  <Image name="crop" value="$image" maxWidth="720px"/>
+
+  <Header value="Origin (hard evidence required for ai / human)"/>
+  <Choices name="origin" toName="crop" choice="single" required="true">
+    <Choice value="ai"/>
+    <Choice value="human"/>
+    <Choice value="unsure"/>
+  </Choices>
+
+  <Header value="Evidence"/>
+  <Choices name="evidence" toName="crop" choice="multiple" required="true">
+    <Choice value="platform_label"/>
+    <Choice value="c2pa"/>
+    <Choice value="creator_disclosure"/>
+    <Choice value="known_ai_account"/>
+    <Choice value="known_human_source"/>
+    <Choice value="generator_watermark"/>
+    <Choice value="visual_judgment"/>
+  </Choices>
+
+  <View visibleWhen="choice-selected" whenTagName="origin" whenChoiceValue="ai">
+    <Header value="AI extent"/>
+    <Choices name="ai_extent" toName="crop" choice="single">
+      <Choice value="fully_generated"/>
+      <Choice value="edited"/>
+      <Choice value="composite"/>
+    </Choices>
+    <TextArea name="generator" toName="crop" placeholder="Generator, if known" maxSubmissions="1"/>
+  </View>
+
+  <Header value="Media"/>
+  <Choices name="media" toName="crop" choice="single" required="true">
+    <Choice value="image"/>
+    <Choice value="video_frame"/>
+    <Choice value="text"/>
+  </Choices>
+
+  <Header value="Category (draft list)"/>
+  <Choices name="category" toName="crop" choice="single">
+    <Choice value="people"/>
+    <Choice value="fitness"/>
+    <Choice value="food"/>
+    <Choice value="travel"/>
+    <Choice value="fashion_beauty"/>
+    <Choice value="animals"/>
+    <Choice value="art_illustration"/>
+    <Choice value="news_politics"/>
+    <Choice value="humor_meme"/>
+    <Choice value="product_ad"/>
+    <Choice value="other"/>
+  </Choices>
+
+  <Header value="Quality"/>
+  <Choices name="quality" toName="crop" choice="single" required="true">
+    <Choice value="ok"/>
+    <Choice value="mostly_ui"/>
+    <Choice value="occluded"/>
+    <Choice value="duplicate"/>
+  </Choices>
+
+  <TextArea name="source_url" toName="crop" placeholder="Original post URL (kept in the private dataset only)" maxSubmissions="1"/>
+</View>

@@ -1,0 +1,19 @@
+{
+  "name": "aiexposure",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r typecheck",
+    "build": "pnpm -r build",
+    "types:generate": "cargo test -p aiexposure-types",
+    "db:start": "supabase db start",
+    "db:test": "supabase test db",
+    "db:reset": "supabase db reset"
+  },
+  "devDependencies": {
+    "supabase": "^2.118.0"
+  }
+}

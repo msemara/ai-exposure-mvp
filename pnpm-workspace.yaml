@@ -1,0 +1,8 @@
+packages:
+  - apps/desktop
+  - packages/*
+  - extension
+
+onlyBuiltDependencies:
+  - esbuild
+  - supabase

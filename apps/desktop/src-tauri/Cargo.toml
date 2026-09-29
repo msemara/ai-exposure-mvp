@@ -1,0 +1,22 @@
+[package]
+name = "aiexposure-desktop"
+description = "Tauri shell. The UI reads results through read-only commands only."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+name = "aiexposure_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+aiexposure-core.workspace = true
+tauri = { version = "2", features = [] }
+
+[lints]
+workspace = true

@@ -1,0 +1,17 @@
+{
+  "name": "@aiexposure/extension",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').copyFileSync('manifest.json', 'dist/manifest.json')\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aiexposure/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.0",
+    "typescript": "^5.9.0"
+  }
+}

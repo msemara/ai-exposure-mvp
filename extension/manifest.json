@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "AI Exposure Companion",
+  "version": "0.1.0",
+  "description": "Sends provenance and caption signals for allowlisted sites to the AI Exposure desktop app on this computer.",
+  "minimum_chrome_version": "120",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["nativeMessaging", "storage"],
+  "optional_host_permissions": ["https://*/*"]
+}

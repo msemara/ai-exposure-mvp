@@ -1,0 +1,13 @@
+/target/
+node_modules/
+.DS_Store
+*.log
+
+# Local Supabase state and secrets.
+supabase/.branches
+supabase/.temp
+.env
+.env.*
+
+# Feed-crop captures contain third-party content: keep them out of git.
+tools/feed-crops/data/
